@@ -1,7 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-	
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
-	<!-- TODO Add Nodes -->
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="693.0" prefWidth="643.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" 
+fx:controller="application.SampleController">
+   <center>
+      <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Button fx:id="startNewGame" layoutX="191.0" layoutY="40.0" mnemonicParsing="false" onAction="#startNewGameBtnClicked" text="Start New Game" />
+                  <Button fx:id="rollDice" layoutX="13.0" layoutY="305.0" mnemonicParsing="false" onAction="#rollDiceBtnClicked" prefHeight="66.0" prefWidth="134.0" text="Roll Dice" />
+                  <Button fx:id="hold" layoutX="159.0" layoutY="306.0" mnemonicParsing="false" onAction="#holdBtnClicked" prefHeight="64.0" prefWidth="142.0" text="Hold" />
+                  <TextField fx:id="playerNameText" layoutX="147.0" layoutY="155.0" prefHeight="23.0" prefWidth="128.0" />
+                  <Text layoutX="36.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="36.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Turn Total">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="35.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Game Total">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="128.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="playerTurnTotalText" layoutX="146.0" layoutY="194.0" prefHeight="23.0" prefWidth="130.0" />
+                  <TextField fx:id="playerGameTotalText" layoutX="148.0" layoutY="230.0" prefHeight="23.0" prefWidth="128.0" />
+                  <TextField fx:id="enterPlayerNameText" layoutX="27.0" layoutY="40.0" promptText="Enter Player Name" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Text layoutX="119.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Computer">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="38.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="38.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Turn Total">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="40.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Game Total">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="computerNameText" layoutX="149.0" layoutY="153.0" prefHeight="23.0" prefWidth="127.0" />
+                  <TextField fx:id="computerTurnTotalText" layoutX="149.0" layoutY="194.0" prefHeight="23.0" prefWidth="127.0" />
+                  <TextField fx:id="computerGameTotalText" layoutX="152.0" layoutY="233.0" prefHeight="23.0" prefWidth="124.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+   <bottom>
+      <TabPane prefHeight="276.0" prefWidth="643.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="gameLogTab" onSelectionChanged="#gameLogTabClicked" text="Game Log">
+               <content>
+                  <TextArea fx:id="gameLogText" prefHeight="200.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+          <Tab fx:id="gameHistoryRecordsTab" onSelectionChanged="#gameHistoryRecordsTabClicked" text="Game History Records">
+               <content>
+                  <TextArea fx:id="gameHistoryRecordsText" prefHeight="200.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </bottom>
 </BorderPane>
